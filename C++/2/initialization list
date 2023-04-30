@@ -1,0 +1,33 @@
+Whenever an object is created, first its member variables are initialized, and only then its constructor's body is executed.
+By default, all members are initialized with their default constructors.
+We can specify a different initialization with an initialization list
+
+Array::Array(int n) // data and size are initiallized (and assigned) here
+{
+    data = new int[n];  // assigned again here
+    size = n;   // assigned again here
+}
+
+this is almost the same as:
+//                      custom initialization values
+Array::Array(int n) : data(new int[n]), size(n)
+{}
+
+
+in some cases we MUST use an initialization list:
+
+class BigInteger
+{
+    Array digits;   // has no default constructor
+    const int base; // base cannot be assigned to!
+
+public:
+    BigInteger(int base, int len);
+    ~BigInteger();
+    // ...
+};
+
+BigInteger::BigInteger(int base, int len) : base(base), digits(len)
+{}
+// this works!
+
