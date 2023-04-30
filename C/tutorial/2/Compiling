@@ -1,0 +1,3 @@
+in gcc the flag -c means compile only, we get an object file.
+gcc -c hello.c 
+will result in hello.o

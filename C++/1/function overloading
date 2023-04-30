@@ -1,0 +1,13 @@
+c++ allows to define several functions with the same name.
+we say that the finctions are OVERLOADED on the name.
+the compiler will choose the correct function to call depending on the type of the arguments.
+
+void swap(int& a, int& b);
+void swap(double& a, double& b);
+
+int a, b;
+double c, d;
+swap(a, b); // calls swap(int&, int&)
+swap(c, d); // calls swap(double&, double&)
+swap(a, c); // error: ambiguous call
+

@@ -1,0 +1,26 @@
+void*
+--------------------
+
+int n = 5;
+double d = 3.14;
+
+void* ptr = &n;
+ptr = &d;
+
+double d2 = *ptr            // error - cannot dereference void*
+double d2 = *(double*)ptr       // ok
+
+double* dptr = ptr;     // Implicit cast from void* to double*
+double d4 = *dptr;      // O.K. – option 2
+
+--------------------
+
+pointers to pointers
+-------------------- ???????????????????????????????????????????????????
+void swap_strings(char** str1, char** str2) {
+	char* temp = *str1;
+	*str1 = *str2;
+	*str2 = temp;
+}
+
+--------------------

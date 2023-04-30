@@ -1,0 +1,19 @@
+cin - standard input
+cout - standard output
+cerr - standard error
+
+printing to cout is done using the << operator
+recieving input from cin is done using the >> operator
+can concatanate multiple inputs/outputs
+
+int main()
+{
+    int n;
+    cin >> n; // read an integer from cin and store it in n
+    cout << n << endl; // print n to cout
+}
+
+no need to remember control tags! (%s, %d, etc.)
+
+can support input/output of new types!!!
+

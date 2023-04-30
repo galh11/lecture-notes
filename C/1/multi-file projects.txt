@@ -1,0 +1,16 @@
+several files can be compiled into one executable file:
+> gcc main.c utility.c testing.c
+
+in order to call a function F defined in file A.c from a different file B.c
+F needs to be declared in A.c 
+we could do so by straight-up declaring F 
+or we can use define
+
+The "-c" flag makes GCC stop after creating object files
+> gcc -c utility.c testing.c 
+
+results in object files: utility.o testing.o
+instead of an executable: name.exe
+
+> gcc utility.o testing.o main.o
+

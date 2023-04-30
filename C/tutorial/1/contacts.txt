@@ -1,0 +1,33 @@
+struct Contact{
+    char* first_name;
+    char* last_name;
+    char* phone_number;
+    char* email;
+    int age;
+};
+
+typedef struct Contact contact;
+
+struct Contact** contacts = (struct Contact**) malloc(sizeof(struct Contact*) * MAX_SIZE);
+
+struct Contact* createContact()
+{
+    struct Contact* contact = (struct Contact*) malloc(sizeof(struct Contact));
+    contact->first_name = (char*) malloc(sizeof(char) * MAX_SIZE);
+    contact->last_name = (char*) malloc(sizeof(char) * MAX_SIZE);
+    contact->phone_number = (char*) malloc(sizeof(char) * MAX_SIZE);
+    contact->email = (char*) malloc(sizeof(char) * MAX_SIZE);
+    printf("Enter first name: ");
+    scanf("%s", contact->first_name);
+    printf("Enter last name: ");
+    scanf("%s", contact->last_name);
+    printf("Enter phone number: ");
+    scanf("%s", contact->phone_number);
+    printf("Enter email: ");
+    scanf("%s", contact->email);
+    printf("Enter age: ");
+    scanf("%d", &contact->age);
+    printf("New Contact Added!\n");
+    return contact;
+}
+

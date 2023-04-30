@@ -1,0 +1,12 @@
+typedef int Length; // Length is a nickname for int
+
+Length len; // equivalent to int len;
+Length lengths[SIZE]; // equivalent to int lengths[SIZE];
+
+typedef double Real; // represents real numbers in a physics simulation
+                    // if we run into memory problems, we can change to float
+
+typedef enum Gender Gender; // now we can use gender instead of enum Gender
+
+typedef Real point3D[3]; // now we can use point3D instead of double[3]
+

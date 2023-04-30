@@ -1,0 +1,124 @@
+typedef struct Node{
+    int x;
+    struct Node* next;
+} Node; 
+
+// create a new node with value x
+Node* createNode(int x)
+{
+    Node* node = (Node*)malloc(sizeof(Node)); // create a new node
+    node->x = x; // set the value
+    node->next = NULL; // set the next pointer to NULL
+    return node; // return the new node
+} 
+
+void printList(Node* head)
+{
+    Node* cur = head;
+    while (cur != NULL)
+    {
+        printf("%d -> ", cur->x);
+        cur = cur->next;
+    }
+    printf("||\n");
+}
+
+void destroyList(Node* head)
+{
+    Node* cur = head;
+    while (cur != NULL)
+    {
+        Node* next = cur->next;
+        free(cur);
+        cur = NULL;
+        cur = next;
+    }
+}
+
+
+// add a node to the beginning of the list
+// return the new head of the list
+// complexity: O(1)
+Node* addNodeToList(Node* head, Node* node)
+{
+    if(head == NULL) return node;
+    node->next = head;
+    return node;
+}
+
+// Suppose we have a list "3 -> 4 -> 5 -> ||" and we want to add a node with value 8 after the node with value 4.
+// We have to first point the new node to the node with value 5 and then point the node with value 4 to the new node.
+// the order of the commands is important!
+// This adds node after "after":
+void addNodeToListAfter(Node* after, Node* node)
+{
+    node->next = after->next;
+    after->next = node;
+}
+
+int main()
+{
+    Node* head = addNodeToList(NULL, createNode(5)); // 5 -> //
+    head = addNodeToList(head, createNode(4)); // 4 -> 5 -> //
+    head = addNodeToList(head, createNode(3)); // 3 -> 4 -> 5 -> //
+    addNodeToListAfter(head->next, createNode(8)); // 3 -> 4 -> 8 -> 5 -> //
+    printList(head);
+    destroyList(head);
+    return 0;
+}
+
+===============================================================================================================
+-------
+Stacks:
+-------
+
+// each node has a pointer to the next node
+typedef struct Stack
+{
+    Node* top;
+} Stack;
+
+// initialize a stack
+Stack* initStack()
+{
+    Stack* s = (Stack*)malloc(sizeof(Stack));
+    s->top = NULL;
+    return s;
+}
+
+// add a node to the start of the list
+void push(Stack* s, int n)
+{
+    s->top = addNodeToList(s->top, createNode(n));
+}
+
+// 
+void pop(Stack* s)
+{
+    Node* tmp = s->top;
+    s->top = s->top->next;
+    free(tmp);
+}
+
+int peek(Stack* s){
+    return s->top->x;
+}
+
+void destroyStack(Stack* s){
+    destroyList(s->top);
+    free(s);
+}
+
+int main(){
+    Stack* s = initStack();
+    push(s, 5);
+    push(s, 4);
+    push(s, 8);
+    printf("%d\n", peek(s));
+    pop(s);
+    printf("%d\n", peek(s));
+    pop(s);
+    printf("%d\n", peek(s));
+    destroyStack(s);
+    return 0;
+}

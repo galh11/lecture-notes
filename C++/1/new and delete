@@ -1,0 +1,13 @@
+Dynamic memory allocations are done in c++ using the new and delete operators.
+
+int *ptr = new int(5); // allocate memory for an int and initialize it to 5
+int* array = new int[10](); // array of 10 ints, initialized to 0
+
+delete ptr; // free the memory allocated for ptr
+delete[] array; // free the memory allocated for array
+
+- new and delete are typed (they allocate memory for a specific type)
+    - unlike malloc and free, which return void*
+- new initializes the object
+    - So there is no “uninitialized memory” containing garbage
+    - Built-in types (such as int) can be allocated with or without initialization

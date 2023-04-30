@@ -1,0 +1,4 @@
+the is no implicit cast from void* to other pointers in c++.
+
+int* ptr = malloc(10*sizeof(int)); // only legal in c
+int* ptr = (int*)malloc(10*sizeof(int)); // required c++

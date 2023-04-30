@@ -1,0 +1,7 @@
+assert macro:
+
+defined in <assert.h>
+
+assert(condition);
+when debugging is enabled, if condition is false, the assert macro calls abort.
+Otherwise (when NDEBUG is defined), it does nothing.

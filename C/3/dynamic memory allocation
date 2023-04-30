@@ -1,0 +1,18 @@
+typedef struct {
+    double re, im;
+} Complex;
+
+const int len = 10;
+
+Complex* vec = malloc(len * sizeof(Complex));
+if (vec == NULL)
+{
+    fprintf(stderr, "cannot allocate vec\n");
+    exit(1); // or return 1; bc exit quits the program!!!
+}
+
+free(vec);
+// free(vec); // error: freeing again could crash the program
+vec = NULL; // good practice to set to NULL after freeing
+
+free(vec) // not an error, can free NULL

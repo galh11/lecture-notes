@@ -1,0 +1,38 @@
+pointer to function:
+    - a pointer to a function is a pointer that points to a function
+    - a pointer to a function is a variable that stores the address of a function
+    - a pointer to a function is declared as follows:
+        - return_type (*pointer_name)(parameter list)
+    - a pointer to a function is used as follows:
+        - pointer_name = function_name;
+        - (*pointer_name)(arguments);
+    - a pointer to a function can be passed to a function as an argument
+    - a pointer to a function can be returned from a function
+    - a pointer to a function can be used to call a function indirectly
+
+double (*fptr)(double); // fptr can point to any function that
+                        // takes one double and returns a double
+fptr = cos; // point fptr to the code of function cos()
+fptr = printf; // will not compile (printf has wrong type)
+
+double derivate(double (*func)(double), double x)
+{
+    const double h = 1e-6;
+    double diff = func(x + h) - func(x - h);
+    return diff / (2 * h);
+}
+
+#include <math.h>
+#define PI 3.14159265358979323846
+
+double square(double x)
+{
+    return x * x;
+}
+
+void compute() 
+{
+    printf("%lf/n", derivate(square, 2.0)); // 4.000000
+    printf("%lf/n", derivate(sin, 0)); // 1.000000
+    printf("%lf/n", derivate(cos, PI/2)); // -1.000000
+}

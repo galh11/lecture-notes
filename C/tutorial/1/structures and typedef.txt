@@ -1,0 +1,54 @@
+int x1 = 8;
+int y1 = 9;
+
+int x2 = 10;
+int y2 = 3;
+
+int comparePoints(int x1, int y1, int x2, int y2); // not efficient
+
+------------------------------------------------------------------------------
+typedef struct Point {
+    int x;
+    int y;
+} point; // <- this name relates to typedef
+
+point p1;
+p1.x = 7;
+p1.y = 8;
+point p2;
+p2.x = 9;
+p2.y = 10;
+
+int comparePoints(point p1, point p2) // efficient
+{
+    return p1.x == p2.x && p1.y == p2.y;
+}
+
+void printPoint(point p)
+{
+    printf("(x,y) = (%d,%d)", p.x, p.y);
+}
+
+than we can use:
+printPoint(p1);
+printPoint(p2);
+------------------------------------------------------------------------------
+
+struct Point {
+    int x;
+    int y;
+}; // <- still have to finish with ";"
+
+we will have to write struct Point p1; instead of point p1;
+but using typedef like above we can write point p1;
+
+------------------------------------------------------------------------------
+
+(*point1).x = 7; // <- this is the same as:
+point1->x = 7; // but this is cleaner
+
+typedef struct Node{
+    int x;
+    node next; // this is recursive and won't end
+    node* next; // this is a pointer to a node
+} node;

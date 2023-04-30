@@ -1,0 +1,19 @@
+A constant pointer cannot change where it points to.
+
+int x = 5;
+int* const ptr = &x; // ptr will always point to x
+*ptr = 7; // ok: can change what ptr points to
+ptr++; // error: cannot change where ptr points to
+
+a pointer to a constant cannot change the value it points to.
+int x = 5;
+const int* ptr = &x; // ptr will never change the value of x
+*ptr = 7; // error: cannot change what ptr points to
+ptr++; // ok: can change where ptr points to
+const int* const ptr2 = &x; // can combine both const types
+
+We want to pass a struct to a function, and make sure it cannot be changed.
+Passing by value will do that, but wastes memory and can be slow.
+
+Solution: use const pointers instead.
+

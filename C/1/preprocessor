@@ -1,0 +1,31 @@
+file inclusion:
+
+#include <file-name>
+#include "file-name"
+
+macro definitions:
+
+#define identifier value
+#define identifier(variables) value 
+#undef identifier
+
+
+conditional compilation:
+
+#if condition
+
+#ifdef identifier
+#ifndef identifier
+
+#else
+#endif
+
+the flag "-E" only preprocess the code
+> gcc -E main.c
+
+
+whilst using macros always use parentheses and only feed them simple arguments to avoid errors!!!
+
+__FILE__ gives current file name
+__LINE__ gives current line number
+_WIN32 is defined when compiling for windows

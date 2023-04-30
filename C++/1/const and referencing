@@ -1,0 +1,74 @@
+in c++, you cannot remove const without an explicit cast:
+const int n = 10;
+const int* p = &n;
+int* q = p; // error: cannot convert const int* to int*, will result in compilation error
+int* q = (int*)p; // ok: explicit cast to int* // although this is not recommended...
+
+c++ allows us to define a  reference to a variable:
+- the notation T& is used to declare a reference to a variable of type T
+- a reference acts an an alternative name for a variable
+
+int i = 1;
+int& r = i; // r is a reference to i
+int x = r; // x is a copy of i
+r = 2; // i is now 2
+
+References must be initialized when they are declared:
+int& r; // error: reference must be initialized
+
+once initialized, a reference cannot be changed to refer to another variable:
+int i = 0, j = 5;
+int& r = i;
+r = j; // i becomes 5
+int* p = &r; // p points to i
+
+a reference is similar to a pointer, but it is not a pointer:
+- a reference is not an object that can be manipulated like a pointer
+- a reference always refers to a legal object (no "NULL reference")
+
+references are useful for passing arguments to functions:
+- can be used when a function needs to modify a variable
+
+void swap(int& a, int& b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+References can be used as a return value:
+
+int& max(int array[], int size)
+{
+    int max = 0;
+    for (int i = 1; i < size; i++)
+    {
+        if (array[i] > array[maxIndex])
+        {
+            maxIndex = i;
+        }
+    }
+    return array[maxIndex];
+}
+
+NEVER return a reference to a local variable!!! 
+only to a variable that will exist after the function returns
+
+A reference can be declared to refer to a const.
+- in this case the refernced object cannot be changed through the reference
+- A const reference can refer to a temporary value
+
+void print(const int& x) // indicates that print does not change x
+{
+    cout << x << endl;
+}
+
+
+complex c = {1, 2};
+print(c);
+
+void print(const Complex& c) // avoids duplicating large structs in memory
+{
+    cout << c.re << " " << c.im << endl;
+}
+

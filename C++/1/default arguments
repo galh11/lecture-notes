@@ -1,0 +1,7 @@
+c++ allows to define a default value for function arguments.
+the function can be called with fewer arguments than there are parameters, 
+and the missing arguments will be replaced by the default values.
+
+void printNumber(int n = 10);
+printNumber(); // prints 10
+printNumber(5); // prints 5

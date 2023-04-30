@@ -1,0 +1,54 @@
+struct name {
+  char *name;
+  int len;
+  int hash;
+};
+
+struct complex {
+    double real;
+    double imaginary;
+}
+
+struct complex c1, c2;
+
+c1.real = 1.0;
+c1.imaginary = 2.0;
+c2.real = 3.0;
+c2.imaginary = 4.0;
+
+printf("c1 = %f + %fi", c1.real, c1.imaginary);
+
+typedef struct complex Complex;
+
+Complex complexAdd(Complex x, Complex y) {
+    Complex z;
+    z.real = x.real + y.real;
+    z.imaginary = x.imaginary + y.imaginary;
+    return z;
+}
+
+Complex complexCreate(double real, double imaginary) {
+    Complex z;
+    z.real = real;
+    z.imaginary = imaginary;
+    return z;
+}
+
+typedef enum Gender {
+    MAN, WOMAN, NON-BINARY
+} Gender;
+
+typedef struct address {
+    char *street_address; //street and number
+    char *city;
+    unsinged int zip_code;
+} Address;
+
+typedef struct {
+    unsinged long id;
+    char* name;
+    Gender gender;
+    Address address;
+} Person;
+
+person_ptr->id = id+1; // instead of (*person_ptr).id = id+1;
