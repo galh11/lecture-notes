@@ -1,0 +1,18 @@
+defining operators is done using operator overloading
+c++ treats an operator like a function
+
+Complex operator+(const Complex &c1, const Complex &c2)
+{
+    return Complex(c1.real + c2.real, c1.imaginary + c2.imaginary);
+}
+
+Complex c1(1.0, 2.0);
+Complex c2(3.0, 4.0);
+Complex c3 = c1 + c2; // c3 = operator+(c1, c2);
+
+we cannot define new operators, only overload existing ones
+
+we cannot change the number of parameters, precedence or associativity
+
+an overloaded operator must have at least one user-defined type as a parameter.
+

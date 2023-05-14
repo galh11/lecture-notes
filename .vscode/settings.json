@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "cstdio": "c"
-    }
+        "cstdio": "c",
+        "namespace": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

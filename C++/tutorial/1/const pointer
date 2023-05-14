@@ -1,0 +1,5 @@
+int a = 5;
+const int* pa = &a; //can't change the address pa points to
+int* const pa = &a; //can't change the value in the address pa points to
+
+NOTICE!!! this might be the opposite, need to check.

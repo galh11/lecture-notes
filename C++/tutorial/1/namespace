@@ -1,0 +1,57 @@
+std::cout << a << endl;
+
+namespace func
+{
+    int x = 0
+    void printArray(int * a)
+    {
+        while(*a != NULL)
+        {
+            printf("%i ", *a++);
+        }
+        printf("\n");
+    }
+    namespace func2
+    {
+        void printHello()
+        {
+            printf("Hello!\n");
+        }
+    }
+}
+
+int arr[] = {1, 2, 3, 4, 5};
+func::printArray(arr);
+
+we can write a namespace inside a namespace.
+
+func::func2::printHello();
+
+
+USING:
+
+int main()
+{
+    int arr[] = {1,2,3,4,5};
+    using namespace func;
+    printArray(arr); // no need to write func::printArray(arr)
+    func2::printHello();
+}
+
+we can use the "using" outside of a function. everything that "sees" it will try to implement it.
+so we need to be careful with it's use!
+
+most of the functions we use in cpp belong to the namespace "std",
+so instead of always writing for example std::cout
+we could instead write at the start of every cpp file:
+using namespace std;
+
+
+Why would we need namespaces?
+say we want have a big system that operates a school and a kindergarten and we'd like to have some create function
+instead of writing:
+void createSchool(...);
+void createKindergarten(...);
+
+we can create a namespace for school and another for kindergarten,
+and then we could simply call both functions "create"!
