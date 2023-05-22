@@ -1,0 +1,63 @@
+class Rational {
+    int numerator, denominator;
+
+    void simplify();
+    static int gcd(int a, int b);
+
+public
+    Rational(int numerator = 0, int denominator = 1);
+    // ... functions and operators ...
+    operator double() const;
+};
+
+Rational r; // r = Rational(0, 1);
+Rational r1(2); // r1 = Rational(2, 1);
+Rational r2(6,10); // r2 = Rational(6, 10);
+
+Rational::Rational(int numerator, int denominator) :
+    numerator(numerator),
+    denominator(denominator)
+{
+    if (denominator == 0)
+    {
+        throw DivisionByZero(); // we'll see this later in the course
+    }
+    simplify();
+}
+
+Rational& Rational::operator+=(const Rational& other)
+{
+    numerator = numerator * other.denominator + other.numerator * denominator;
+    denominator *= other.denominator;
+    simplify();
+    return *this;
+}
+
+Rational Rational::operator+(const Rational& other) const
+{
+    Rational result(*this);
+    return (result += other);
+}
+
+Rational Rational::operator-() const
+{
+    return Rational(-numerator, denominator);
+}
+
+Rational& Rational::operator-=(const Rational& other)
+{
+    return (*this += (-other));
+}
+
+Rational Rational::operator-(const Rational& other) const
+{
+    Rational result(*this);
+    return (result -= other);
+}
+
+Rational::operator double() const
+{
+    return (double)numerator / denominator;
+}
+
+to prevent implicit conversions, we can use the explicit keyword!!!

@@ -1,0 +1,55 @@
+In many cases a constructor will allocate a resource
+    - E.g., allocate memory on the heap, open a file, open a network connection, …
+    - In such cases, the resource must be freedwhen the object is destroyed
+
+Each class has a special member function called a destructor
+    - The destructor is automaticallycalled when the object is destroyed
+
+class Array
+{
+    int* data;
+    int size;
+
+    public:
+        Array(int size);
+        ~Array();
+        int& atIndex(int index);
+};
+
+destructors take no arguments, therefore there can only be ONE per class!
+
+
+Array::Array(int size)
+{
+    data = new int[size];
+    this->size = size;
+}
+
+Array::~Array()
+{
+    delete[] data;
+}
+
+int& Array::atIndex(int index)
+{
+    assert(index >= 0 && index < size);
+    return data[index];
+}
+
+
+A destructor is called whenever an object is released, for example: 
+    - When a localobject goes out of scope
+    - When a dynamically allocated object is explicitly deleted
+    - When a temporary value is released at the "end of the line"
+
+void f1(const Array& a);
+
+void f2()
+{
+    Array a(10);
+    Array* ptr = new Array(20);
+    Array* ptr2 = new Array(20);
+    f1(Array(20)); // temporary Array => destructed "at the end of the line"
+    delete ptr;     // calls ptr->~Array()
+}   // a.~Array() is called (goes out of scope)
+// *ptr2 is leaked!!!

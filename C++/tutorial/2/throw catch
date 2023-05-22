@@ -1,0 +1,64 @@
+#include <iostream>
+
+using namespace std;
+
+int f3()
+{
+    cout << "f3() called\n";
+    throw 1; // throw an exception
+    return 1; 
+}
+
+int main()
+{
+    try
+    {
+        cout << f3() << "\n";
+    }
+    catch(...) // catch all exceptions
+    {
+        cout << "Exception caught\n";
+    }
+    return 0;
+}
+
+// Output:
+// f3() called
+// Exception caught
+//
+
+int main()
+{
+    try
+    {
+        cout << f3() << "\n";
+    }
+    catch(int n) // catch all exceptions
+    {
+        cout << "Error " << n << "\n";
+    }
+    catch(const int& n) // this is better
+    {
+        cout << "Error int " << n << "\n";
+    }
+    cathc(const double& n)
+    {
+        cout << "Error double " << n << "\n";
+    }
+    catch(...) // catch all exceptions
+    {
+        cout << "undefined error\n";
+    }
+    {
+
+    }
+    return 0;
+}
+
+// Output:
+// f3() called
+// Error 1
+//
+
+we dont throw exceptions in destructors!
+(because we dont want to throw an exception while we are already in an exception)
