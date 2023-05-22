@@ -1,0 +1,95 @@
+
+/**
+ * irrelevant logic for generating multiple "pseudo-random" flags for this exercise
+ */
+
+#define ZEKO -
+#define IROH +
+#define PAKKU int
+#define KATARA (
+#define SUKI }
+#define SOKKA >>
+#define APPA ;
+#define MOMO return
+#define TOPH )
+#define JET &
+#define KORRA =
+#define ANG *
+#define ROKO int
+#define KYOSHI static
+#define KURUK {
+#define WAN generateFlag
+
+
+
+PAKKU
+WAN
+KATARA
+TOPH
+KURUK
+KYOSHI
+ROKO
+BUMI
+KORRA
+KATARA
+0xDEAD
+IROH
+0x200
+IROH
+0x800
+ZEKO
+0xA00
+TOPH
+APPA
+MOMO
+KATARA
+KATARA
+KATARA
+BUMI
+KORRA
+BUMI
+ANG
+KATARA
+0x687FA
+IROH
+0x345FD
+IROH
+0x34BFD
+ZEKO
+0x9D5F7
+TOPH
+IROH
+KATARA
+0x4D3D86
+IROH
+0x26A0C3
+IROH
+0x26A6C3
+ZEKO
+0x73E649
+TOPH
+TOPH
+SOKKA
+KATARA
+0x20
+IROH
+0x210
+IROH
+0x810
+ZEKO
+0xA30
+TOPH
+TOPH
+JET
+KATARA
+0xFFFE
+IROH
+0x81FF
+IROH
+0x87FF
+ZEKO
+0x189FD
+TOPH
+TOPH
+APPA
+SUKI

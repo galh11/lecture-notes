@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/ISP/lecture notes/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  --pedantic-errors -Wall -Werror -g -std=gnu++11 -o CMakeFiles\\cpp_test.dir\\main.cpp.obj -c \"C:\\ISP\\lecture notes\\Debugging workshop\\1\\main.cpp\"",
+  "file": "C:\\ISP\\lecture notes\\Debugging workshop\\1\\main.cpp",
+  "output": "CMakeFiles\\cpp_test.dir\\main.cpp.obj"
+},
+{
+  "directory": "C:/ISP/lecture notes/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  --pedantic-errors -Wall -Werror -g -std=gnu++11 -o CMakeFiles\\cpp_test.dir\\WaterBender.cpp.obj -c \"C:\\ISP\\lecture notes\\Debugging workshop\\1\\WaterBender.cpp\"",
+  "file": "C:\\ISP\\lecture notes\\Debugging workshop\\1\\WaterBender.cpp",
+  "output": "CMakeFiles\\cpp_test.dir\\WaterBender.cpp.obj"
+},
+{
+  "directory": "C:/ISP/lecture notes/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  --pedantic-errors -Wall -Werror -g -std=gnu++11 -o CMakeFiles\\cpp_test.dir\\printingLib.cpp.obj -c \"C:\\ISP\\lecture notes\\Debugging workshop\\1\\printingLib.cpp\"",
+  "file": "C:\\ISP\\lecture notes\\Debugging workshop\\1\\printingLib.cpp",
+  "output": "CMakeFiles\\cpp_test.dir\\printingLib.cpp.obj"
+},
+{
+  "directory": "C:/ISP/lecture notes/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  --pedantic-errors -Wall -Werror -g -std=gnu++11 -o CMakeFiles\\cpp_test.dir\\flag_generator.cpp.obj -c \"C:\\ISP\\lecture notes\\Debugging workshop\\1\\flag_generator.cpp\"",
+  "file": "C:\\ISP\\lecture notes\\Debugging workshop\\1\\flag_generator.cpp",
+  "output": "CMakeFiles\\cpp_test.dir\\flag_generator.cpp.obj"
+}
+]

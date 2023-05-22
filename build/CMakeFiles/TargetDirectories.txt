@@ -1,0 +1,3 @@
+C:/ISP/lecture notes/build/CMakeFiles/cpp_test.dir
+C:/ISP/lecture notes/build/CMakeFiles/edit_cache.dir
+C:/ISP/lecture notes/build/CMakeFiles/rebuild_cache.dir
